@@ -29,23 +29,24 @@
     </div>
 
     <div id="stat">
-        <h1>$$ T = 2 π \sqrt{m \over k}$$<span id="answer">T = </span></h1>
+        <h1>$$ T = 2 π \sqrt{m \over k}$$</h1>
+            <div class="inpOne"> 
+               <div class="textT"><span id="answer"> T= </span> </div>
+        
+                <input type="range" id="masa" value="5000" min="1000" max="10000" > 
+                <span id="mas"> 5 Кг.</span>
+                <br>
+            
+                <input type="range" id="rigidity" value="200" min="1" max="500" > 
+                <span id="k"> 200 H/м</span>
+                <br>
 
-        <input type="range" id="masa" value="5000" min="1000" max="10000" > 
-        <span id="mas"> 5 Кг.</span>
-        <br>
-
-        <input type="range" id="rigidity" value="200" min="1" max="500" > 
-        <span id="k"> 200 H/м</span>
-        <br>
-
-        <button id="btn">update</button>
-
+                 <button id="btn">Применить</button>
+        </div>
     </div>
 
 
     <script src="js/script.js"></script>
     <SCRIPT SRC='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></SCRIPT>
-    <!-- <SCRIPT>MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}})</SCRIPT> -->
 </body>
 </html>
