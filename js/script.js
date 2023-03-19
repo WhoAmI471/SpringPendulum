@@ -62,7 +62,7 @@ function eventX(value) {
 
 function eventV(value) {
    V = Number(value);
-   block.style.setProperty("--m", `${m*10*(value/2)}px`);
+   block.style.setProperty("--m", `${50*(value/2)}px`);
    update();
   }
 
