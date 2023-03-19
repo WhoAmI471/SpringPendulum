@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,44 +8,82 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="test" class="container">
-        <svg id="pr" width="59" height="202" viewBox="0 0 59 202" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0.5" y1="-0.5" x2="59.7848" y2="-0.5" transform="matrix(0.961815 -0.273701 0.266848 0.963739 1.01721 17.5)" stroke="black" stroke-linecap="round"/>
-            <line x1="58.385" y1="33.349" x2="1.34903" y2="17.615" stroke="black" stroke-linecap="round"/>
-            <line x1="0.5" y1="-0.5" x2="59.7848" y2="-0.5" transform="matrix(0.961815 -0.273701 0.266848 0.963739 1.01721 51.5)" stroke="black" stroke-linecap="round"/>
-            <line x1="58.385" y1="67.349" x2="1.34903" y2="51.615" stroke="black" stroke-linecap="round"/>
-            <line x1="0.5" y1="-0.5" x2="59.7848" y2="-0.5" transform="matrix(0.961815 -0.273701 0.266848 0.963739 1.01721 85.5)" stroke="black" stroke-linecap="round"/>
-            <line x1="58.385" y1="101.349" x2="1.34903" y2="85.615" stroke="black" stroke-linecap="round"/>
-            <line x1="0.5" y1="-0.5" x2="59.7848" y2="-0.5" transform="matrix(0.961815 -0.273701 0.266848 0.963739 1.01721 119.5)" stroke="black" stroke-linecap="round"/>
-            <line x1="58.385" y1="135.349" x2="1.34903" y2="119.615" stroke="black" stroke-linecap="round"/>
-            <line x1="0.5" y1="-0.5" x2="59.7848" y2="-0.5" transform="matrix(0.961815 -0.273701 0.266848 0.963739 1.01721 153.5)" stroke="black" stroke-linecap="round"/>
-            <line x1="58.385" y1="169.349" x2="1.34903" y2="153.615" stroke="black" stroke-linecap="round"/>
-            <line x1="0.5" y1="-0.5" x2="59.7848" y2="-0.5" transform="matrix(0.961815 -0.273701 0.266848 0.963739 1.01721 187.5)" stroke="black" stroke-linecap="round"/>
-            <line x1="58.4027" y1="200.379" x2="1.37854" y2="187.597" stroke="black" stroke-linecap="round"/>
-            <line x1="1.5" y1="0.5" x2="58.5" y2="0.5" stroke="black" stroke-linecap="round"/>
-            <line x1="1" y1="201.5" x2="59" y2="201.5" stroke="black"/>
-        </svg>
-        <div class="block" id="block"></div>
-    </div>
-
-    <div id="stat">
-        <h1>$$ T = 2 π \sqrt{m \over k}$$</h1>
-            <div class="inpOne"> 
-               <div class="textT"><span id="answer"> T = 0.99c.</span> </div>
-        
-                <input type="range" id="masa" value="5000" min="1000" max="10000" > 
-                <span id="mas"> 5 Кг.</span>
-                <br>
-            
-                <input type="range" id="rigidity" value="200" min="1" max="500" > 
-                <span id="k"> 200 H/м</span>
-                <br>
-
-                 <button id="btn">Применить</button>
+    <div class="container">
+        <div id="test" class="model">
+            <svg id="pr" width="59" height="202" viewBox="0 0 59 202" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0.5" y1="-0.5" x2="59.7848" y2="-0.5" transform="matrix(0.961815 -0.273701 0.266848 0.963739 1.01721 17.5)" stroke="black" stroke-linecap="round"/>
+                <line x1="58.385" y1="33.349" x2="1.34903" y2="17.615" stroke="black" stroke-linecap="round"/>
+                <line x1="0.5" y1="-0.5" x2="59.7848" y2="-0.5" transform="matrix(0.961815 -0.273701 0.266848 0.963739 1.01721 51.5)" stroke="black" stroke-linecap="round"/>
+                <line x1="58.385" y1="67.349" x2="1.34903" y2="51.615" stroke="black" stroke-linecap="round"/>
+                <line x1="0.5" y1="-0.5" x2="59.7848" y2="-0.5" transform="matrix(0.961815 -0.273701 0.266848 0.963739 1.01721 85.5)" stroke="black" stroke-linecap="round"/>
+                <line x1="58.385" y1="101.349" x2="1.34903" y2="85.615" stroke="black" stroke-linecap="round"/>
+                <line x1="0.5" y1="-0.5" x2="59.7848" y2="-0.5" transform="matrix(0.961815 -0.273701 0.266848 0.963739 1.01721 119.5)" stroke="black" stroke-linecap="round"/>
+                <line x1="58.385" y1="135.349" x2="1.34903" y2="119.615" stroke="black" stroke-linecap="round"/>
+                <line x1="0.5" y1="-0.5" x2="59.7848" y2="-0.5" transform="matrix(0.961815 -0.273701 0.266848 0.963739 1.01721 153.5)" stroke="black" stroke-linecap="round"/>
+                <line x1="58.385" y1="169.349" x2="1.34903" y2="153.615" stroke="black" stroke-linecap="round"/>
+                <line x1="0.5" y1="-0.5" x2="59.7848" y2="-0.5" transform="matrix(0.961815 -0.273701 0.266848 0.963739 1.01721 187.5)" stroke="black" stroke-linecap="round"/>
+                <line x1="58.4027" y1="200.379" x2="1.37854" y2="187.597" stroke="black" stroke-linecap="round"/>
+                <line x1="1.5" y1="0.5" x2="58.5" y2="0.5" stroke="black" stroke-linecap="round"/>
+                <line x1="1" y1="201.5" x2="59" y2="201.5" stroke="black"/>
+            </svg>
+            <div class="block" id="block"></div>
         </div>
+
+        <div id="stat">
+            <h1>$$ T = 2 π \sqrt{m \over k}$$</h1>
+                <div class="inpOne"> 
+                <div class="textT"><span id="answer"> T = 0.99c.</span> </div>
+            
+                    <input type="range" id="masa" value="5000" min="1000" max="10000" > 
+                    <span id="mas"> 5 Кг.</span>
+                    <br>
+                
+                    <input type="range" id="rigidity" value="200" min="1" max="500" > 
+                    <span id="k"> 200 H/м</span>
+                    <br>
+                    <label for="checkbox"><input id="check" name="checkbox" type="checkbox"> вычисление по табличным показаниям</label>
+                    <br>    
+
+
+                    <button id="btn">Применить</button>
+                    <button id="btnStop" onclick="Stop()"> stop</button>
+            </div>
+        </div>  
     </div>
 
+    <div class="table">
+        <table border="1" cellpadding="4" cellspacing="1">
+         <caption>Таблица плотности материалов</caption>
+         <tr>
+          <th>Твёрдое тело</th>
+          <!-- <th>$$ p {кг \over м^3}$$</th> -->
+          <th>$$ p {г \over cм^3}$$</th>
+         </tr>
+         <tr><td><a href="">Осмий</a></td><td id="oneG" onclick="kCountStage2(id)">22.6</td></tr>
+         <tr><td>Иридий</td><td id="twoG" onclick="kCountStage2(id)">22.4</td></tr>
+         <tr><td>Платина</td><td id="threG" onclick="kCountStage2(id)">21.5</td></tr>
+         <tr><td>Золото</td><td id="fourG" onclick="kCountStage2(id)">19.3</td></tr>
+         <tr><td>Чугун</td><td id="fiveG" onclick="kCountStage2(id)">7</td></tr>
+        </table>
 
+        <div class="formul">
+            <h2>$$ F_{упр.} = mg $$</h2>
+            <h2>$$ F_{упр.} = kx $$</h2>
+            <h2>$$ k = {F_{упр.} \over x} $$</h2>
+            
+            <h3>Данные для ручного ввода</h3>
+            <p>x = <input id="X" type="text" onchange='eventX(this.value)' value="1"> м</p>
+            <p>V = <input id="V" type="text" onchange='eventV(this.value)' value="1"> см.куб. </p>
+            <!-- <span >$$ см^3 $$</span> -->
+
+
+            <p>m = <label id="m"></label> </p>
+            <p>F = <label id="F"></label></p>
+            
+            <!-- <p>k = <label id="K"></label></p> -->
+        </div>
+
+    </div>
     <script src="js/script.js"></script>
     <SCRIPT SRC='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></SCRIPT>
 </body>

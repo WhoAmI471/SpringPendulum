@@ -3,37 +3,89 @@ const res = document.querySelector('#answer');
 const pr = document.querySelector('#pr');
 const mas = document.querySelector('#mas');
 const kRan = document.querySelector('#k');
+const check = document.querySelector('#check');
+const root = document.querySelector(':root');
+
 
 document.querySelector('#masa').oninput = masCount;
 document.querySelector('#rigidity').oninput = kCount;
 document.querySelector('#btn').onclick = update;
 
 
-let dragging = false;
-let drag = false;
-
 let T = 0;
 let k = 200;
 let m = 5;
+let V = 1;
+
+let x = 1;
+let h = 170;
+
+let x0 = 270;
+let x1 = 70;
+let a = x * 100 //перевод в сантиметры
 
 function masCount() {
     m = (this.value/1000).toFixed(2);
     mas.innerHTML = `${m} Кг.`;
     block.style.setProperty("--m", `${m*10}px`);
+    // 
 };
 
 function kCount() {
     k = this.value;
+    console.log(k);
     kRan.innerHTML = `${k} H/м`;
 };
 
 function update() {
     T = (2*Math.PI*Math.sqrt(m/k)).toFixed(2);
+
     res.innerHTML = `T = ${T}c.`;
-    block.style.setProperty("--T", `${T}s`);
     pr.style.setProperty("--T", `${T}s`);
+
+    //высота пружины и амплитуда сжатия
+    root.style.setProperty("--h", `${h}px`);
+    //root.style.setProperty("--z");если понадобится сделать увеличение толщены пружины
+    a = x * 100 //перевод в сантиметры
+    root.style.setProperty("--x0", `${h+a}px`);
+    root.style.setProperty("--x1", `${h-a}px`);
 }
 
-server.on('connection', function(socket) {
-    console.log('Client adress is: ' + socket.remoteAddress);
-});
+function Stop(){
+    pr.style.setProperty("--T", `${0}s`);
+}
+
+function eventX(value) {
+   x = parseFloat(value);
+   update();
+  }
+
+function eventV(value) {
+   V = Number(value);
+   block.style.setProperty("--m", `${m*10*(value/2)}px`);
+   update();
+  }
+
+function kCountStage2(id) {
+    if (check.checked){
+        m = ((parseFloat(document.querySelector(`#${id}`).textContent) * V)/1000).toFixed(3);
+        // console.log(parseFloat(num));
+        document.querySelector('#m').innerHTML = `${m} кг.`;
+        document.querySelector('#mas').innerHTML = `${m} кг.`;
+
+        let F = (m * 9.8).toFixed(2);
+        // console.log(Number(F));
+        document.querySelector('#F').innerHTML = `${F} Н`;
+
+        k = (F / x).toFixed(2);
+
+        console.log("x: "+x);
+        console.log("m: "+m);
+        console.log("F: "+F);
+        console.log("k: "+k);
+
+        // document.querySelector('#K').innerHTML = `${k} Н/м`;
+        kRan.innerHTML = `${k} Н/м`;
+        update();
+    }
+}
