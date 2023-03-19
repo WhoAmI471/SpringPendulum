@@ -14,6 +14,8 @@ document.querySelector('#btn').onclick = update;
 check.onclick = checedSystem;
 
 
+let m0 = 0;
+
 let T = 0;
 let k = 200;
 let m = 5;
@@ -46,7 +48,6 @@ function masCount() {
     m = (this.value/1000).toFixed(2);
     mas.innerHTML = `${m} Кг.`;
     block.style.setProperty("--m", `${m*10}px`);
-    // 
 };
 
 function kCount() {
@@ -76,33 +77,43 @@ function Stop(){
 function eventX(value) {
    x = parseFloat(value)/10;
    document.querySelector('#statusX').innerHTML = `x = ${x}м`
-   update();
-  }
+   kCountStage2();
+}
 
 function eventV(value) {
    V = Number(value);
    document.querySelector('#statusV').innerHTML = `V = ${V}см.куб.`
    block.style.setProperty("--m", `${50+(value*2)}px`);
-   update();
-  }
+   kCountStage2();
+}
 
-function kCountStage2(id) {
+function getMasInTable(id) {
+    
     if (check.checked){
-        m = ((parseFloat(document.querySelector(`#${id}`).textContent) * V)/1000).toFixed(3);
-        // console.log(parseFloat(num));
-        document.querySelector('#m').innerHTML = `${m} кг.`;
-        document.querySelector('#mas').innerHTML = `${m} кг.`;
+        m = parseFloat(document.querySelector(`#${id}`).textContent)/1000;
+        m0 = m;
+        kCountStage2();
+    }
+}
 
-        let F = (m * 9.8).toFixed(2);
+function kCountStage2() {
+    if (check.checked){
+        m0 = m;
+
+        m0 = (m * V).toFixed(3);
+        console.log();
+        document.querySelector('#m').innerHTML = `${m0} кг.`;
+        document.querySelector('#mas').innerHTML = `${m0} кг.`;
+        let F = (m0 * 9.8).toFixed(2);
         // console.log(Number(F));
         document.querySelector('#F').innerHTML = `${F} Н`;
 
         k = (F / x).toFixed(2);
 
-        console.log("x: "+x);
-        console.log("m: "+m);
-        console.log("F: "+F);
-        console.log("k: "+k);
+        console.log("x: " + x);
+        console.log("m: " + m);
+        console.log("F: " + F);
+        console.log("k: " + k);
 
         // document.querySelector('#K').innerHTML = `${k} Н/м`;
         kRan.innerHTML = `${k} Н/м`;

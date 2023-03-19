@@ -67,7 +67,7 @@ body {
 
 #stat {
     width: 400px;
-    height: 400px;
+    height: 460px;
 
     margin-top: 50px;
 
@@ -90,10 +90,10 @@ body {
     width: 200px;
     height: 50px;
 
-    margin-left: 80px;
-    margin-top: 70px;
+    /* margin-left: 80px; */
 
-    font-size: 3vmin;border-radius: 1vmin;
+    font-size: 3vmin;
+    border-radius: 1vmin;
 
     color: darkslateblue;
     background-color: rgb(154, 211, 211);
@@ -102,6 +102,31 @@ body {
 #btn:hover {
     color: black;
     background-color: rgb(33, 170, 170);
+}
+
+#btnStop {
+    width: 100px;
+    height: 50px;
+
+    margin-top: 20px;
+    
+    font-size: 3vmin;
+    border-radius: 1vmin;
+    color: darkslateblue;
+    background-color: rgb(154, 211, 211);
+}
+
+#btnStop:hover {
+    color: black;
+    background-color: rgb(33, 170, 170);
+}
+.buttons {
+    margin-top: 70px;
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 
 @keyframes movePr {

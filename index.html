@@ -44,11 +44,12 @@
                     <input id="check" name="checkbox" type="checkbox">
                     <label for="checkbox"> вычисление по табличным показаниям</label>
                     <br>    
-
-
-                    <button id="btn">Применить</button>
-                    <button id="btnStop" onclick="Stop()"> stop</button>
-            </div>
+                </div>
+                    <div class="buttons">
+                        <button id="btn">Применить</button>
+                        <!-- <br> -->
+                        <button id="btnStop" onclick="Stop()"> stop</button>
+                    </div>
         </div>  
     </div>
 
@@ -60,11 +61,11 @@
           <!-- <th>$$ p {кг \over м^3}$$</th> -->
           <th>$$ p {г \over cм^3}$$</th>
          </tr>
-         <tr onclick="kCountStage2('oneG')" ><td>Осмий</td><td id="oneG">22.6</td></tr>
-         <tr onclick="kCountStage2('twoG')"><td>Иридий</td><td id="twoG">22.4</td></tr>
-         <tr onclick="kCountStage2('threG')" ><td>Платина</td><td id="threG">21.5</td></tr>
-         <tr onclick="kCountStage2('fourG')" ><td>Золото</td><td id="fourG">19.3</td></tr>
-         <tr onclick="kCountStage2('fiveG')" ><td>Чугун</td><td id="fiveG">7</td></tr>
+         <tr onclick="getMasInTable('oneG')"><td>Осмий</td><td id="oneG">22.6</td></tr>
+         <tr onclick="getMasInTable('twoG')"><td>Иридий</td><td id="twoG">22.4</td></tr>
+         <tr onclick="getMasInTable('threG')"><td>Платина</td><td id="threG">21.5</td></tr>
+         <tr onclick="getMasInTable('fourG')"><td>Золото</td><td id="fourG">19.3</td></tr>
+         <tr onclick="getMasInTable('fiveG')"><td>Чугун</td><td id="fiveG">7</td></tr>
         </table>
 
         <div class="formul">
@@ -78,7 +79,7 @@
             disabled>
            
             <p id="statusV">V = 1 см.куб. </p>
-            <input id="V" type="range" onchange='eventV(this.value)' value="10" min="1" max="50" disabled>
+            <input id="V" type="range" onchange='eventV(this.value)' value="1" min="1" max="50" disabled>
             <!-- <span >$$ см^3 $$</span> -->
 
 
