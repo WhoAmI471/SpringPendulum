@@ -41,7 +41,8 @@
                     <input type="range" id="rigidity" value="200" min="1" max="500" > 
                     <span id="k"> 200 H/м</span>
                     <br>
-                    <label for="checkbox"><input id="check" name="checkbox" type="checkbox"> вычисление по табличным показаниям</label>
+                    <input id="check" name="checkbox" type="checkbox">
+                    <label for="checkbox"> вычисление по табличным показаниям</label>
                     <br>    
 
 
@@ -59,11 +60,11 @@
           <!-- <th>$$ p {кг \over м^3}$$</th> -->
           <th>$$ p {г \over cм^3}$$</th>
          </tr>
-         <tr><td><a href="">Осмий</a></td><td id="oneG" onclick="kCountStage2(id)">22.6</td></tr>
-         <tr><td>Иридий</td><td id="twoG" onclick="kCountStage2(id)">22.4</td></tr>
-         <tr><td>Платина</td><td id="threG" onclick="kCountStage2(id)">21.5</td></tr>
-         <tr><td>Золото</td><td id="fourG" onclick="kCountStage2(id)">19.3</td></tr>
-         <tr><td>Чугун</td><td id="fiveG" onclick="kCountStage2(id)">7</td></tr>
+         <tr onclick="kCountStage2('oneG')" ><td>Осмий</td><td id="oneG">22.6</td></tr>
+         <tr onclick="kCountStage2('twoG')"><td>Иридий</td><td id="twoG">22.4</td></tr>
+         <tr onclick="kCountStage2('threG')" ><td>Платина</td><td id="threG">21.5</td></tr>
+         <tr onclick="kCountStage2('fourG')" ><td>Золото</td><td id="fourG">19.3</td></tr>
+         <tr onclick="kCountStage2('fiveG')" ><td>Чугун</td><td id="fiveG">7</td></tr>
         </table>
 
         <div class="formul">
@@ -72,8 +73,12 @@
             <h2>$$ k = {F_{упр.} \over x} $$</h2>
             
             <h3>Данные для ручного ввода</h3>
-            <p>x = <input id="X" type="text" onchange='eventX(this.value)' value="1"> м</p>
-            <p>V = <input id="V" type="text" onchange='eventV(this.value)' value="1"> см.куб. </p>
+            <p id="statusX">x = 1 м</p>
+            <input id="X" type="range" onchange='eventX(this.value)' value="10" min="1" max="15"
+            disabled>
+           
+            <p id="statusV">V = 1 см.куб. </p>
+            <input id="V" type="range" onchange='eventV(this.value)' value="10" min="1" max="50" disabled>
             <!-- <span >$$ см^3 $$</span> -->
 
 

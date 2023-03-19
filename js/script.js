@@ -11,6 +11,8 @@ document.querySelector('#masa').oninput = masCount;
 document.querySelector('#rigidity').oninput = kCount;
 document.querySelector('#btn').onclick = update;
 
+check.onclick = checedSystem;
+
 
 let T = 0;
 let k = 200;
@@ -23,6 +25,22 @@ let h = 170;
 let x0 = 270;
 let x1 = 70;
 let a = x * 100 //перевод в сантиметры
+
+function checedSystem(){
+    var dis = document.querySelector('#masa').disabled;
+    if (dis) {
+        document.querySelector('#masa').disabled = false;
+        document.querySelector('#rigidity').disabled = false;
+        document.querySelector('#X').disabled = true;
+        document.querySelector('#V').disabled = true;
+    } else {
+        document.querySelector('#masa').disabled = true;
+        document.querySelector('#rigidity').disabled = true;
+        document.querySelector('#X').disabled = false;
+        document.querySelector('#V').disabled = false;
+    }
+    document.querySelector('#rigidity');
+}
 
 function masCount() {
     m = (this.value/1000).toFixed(2);
@@ -56,13 +74,15 @@ function Stop(){
 }
 
 function eventX(value) {
-   x = parseFloat(value);
+   x = parseFloat(value)/10;
+   document.querySelector('#statusX').innerHTML = `x = ${x}м`
    update();
   }
 
 function eventV(value) {
    V = Number(value);
-   block.style.setProperty("--m", `${50*(value/2)}px`);
+   document.querySelector('#statusV').innerHTML = `V = ${V}см.куб.`
+   block.style.setProperty("--m", `${50+(value*2)}px`);
    update();
   }
 
