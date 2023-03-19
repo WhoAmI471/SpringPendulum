@@ -28,9 +28,12 @@ function kCount() {
 };
 
 function update() {
-
     T = (2*Math.PI*Math.sqrt(m/k)).toFixed(2);
     res.innerHTML = `T = ${T}c.`;
     block.style.setProperty("--T", `${T}s`);
     pr.style.setProperty("--T", `${T}s`);
 }
+
+server.on('connection', function(socket) {
+    console.log('Client adress is: ' + socket.remoteAddress);
+});
