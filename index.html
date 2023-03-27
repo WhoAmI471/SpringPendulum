@@ -8,6 +8,30 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    
+     <div class="menu"> <!-- доп меню для телефона -->
+        
+        <table class="value_table">
+            <tr>
+                <th>Таблица </th>
+            </tr>
+            <tr class="need_click" onclick="getkInTable('oneG')"><td class="choice">Алюминий</td><td class="choice" id="oneG">138.6</td></tr>
+            <tr class="need_click" onclick="getkInTable('twoG')"><td>Вольфрам</td><td id="twoG">720</td></tr>
+            <tr class="need_click" onclick="getkInTable('threeG')"><td>Германий</td><td id="threeG">165.3</td></tr>
+            <tr class="need_click" onclick="getkInTable('fourG')"><td>Дюралюминий</td><td id="fourG">147.2</td></tr>
+            <tr class="need_click" onclick="getkInTable('fiveG')"><td>Иридий</td><td id="fiveG">1098.6</td></tr>
+        </table>
+        <table class="value_table">
+            <tr>
+                <th> жесткости </th>
+            </tr>
+            <tr class="need_click" onclick="getkInTable('sixG')"><td>Латунь</td><td id="sixG">187.73</td></tr>
+            <tr class="need_click" onclick="getkInTable('sevenG')"><td>Медь</td><td id="sevenG">217.06</td></tr>
+            <tr class="need_click" onclick="getkInTable('eightG')"><td>Серебро</td><td id="eightG">155.73</td></tr>
+            <tr class="need_click" onclick="getkInTable('nineG')"><td>Серый чугун</td><td id="nineG">240.53</td></tr>
+            <tr class="need_click" onclick="getkInTable('tenG')"><td>Сталь</td><td id="tenG">437.3</td></tr>
+        </table>
+    </div>
     <div class="container">
         <div id="test" class="model">
             <svg id="pr" width="59" height="202" viewBox="0 0 59 202" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,83 +52,46 @@
             </svg>
             <div class="block" id="block"></div>
         </div>
-
+        
         <div id="stat">
             <h1>$$ T = 2 π \sqrt{m \over k}$$</h1>
-                <div class="inpOne"> 
+            <div class="inpOne"> 
                 <div class="textT"><span id="answer"> T = 0.99c.</span> </div>
             
-                    <input type="range" id="masa" value="5000" min="1000" max="10000" > 
-                    <span id="mas"> 5 Кг.</span>
-                    <br>
+                <input type="range" id="masa" value="5000" min="1000" max="10000" > 
+                <span id="mas"> 5 Кг.</span>
+                <br>
                 
-                    <input type="range" id="rigidity" value="200" min="1" max="500" > 
-                    <span id="k"> 200 H/м</span>
-                    <br>
-                    <!-- <input id="check" name="checkbox" type="checkbox">
-                    <label for="checkbox"> вычисление по табличным показаниям</label> -->
-                </div>
-                    <div class="buttons">
-                        <button id="btn">Обновить</button>
-                        <button id="btnStop" onclick="Stop()">Stop</button>
-                    </div>
+                <input type="range" id="rigidity" value="200" min="1" max="500" > 
+                <span id="k"> 200 H/м</span>
+                <br>
+            </div>
+            <div class="buttons">
+                <button id="btn">Обновить</button>
+                <button id="btnStop" onclick="Stop()">Stop</button>
+            </div>
         </div>  
-    </div>
-    <div class="table">
-        <table border="1" cellpadding="4" cellspacing="1">
-         <caption>Таблица жесткости пружины</caption>
-         <tr>
-          <th>Твёрдое тело</th>
-          <th>$$ k, {Н \over м}$$</th>
-          <!-- k = G * (Dw)^4 / 8 * Na * (Dm)^3, -->
-         </tr>
-         <tr onclick="getkInTable('oneG')"><td>Алюминий</td><td id="oneG">138.6</td></tr>
-         <tr onclick="getkInTable('twoG')"><td>Вольфрам</td><td id="twoG">720</td></tr>
-         <tr onclick="getkInTable('threeG')"><td>Германий</td><td id="threeG">165.3</td></tr>
-         <tr onclick="getkInTable('fourG')"><td>Дюралюминий</td><td id="fourG">147.2</td></tr>
-         <tr onclick="getkInTable('fiveG')"><td>Иридий</td><td id="fiveG">1098.6</td></tr>
-         <tr onclick="getkInTable('sixG')"><td>Латунь</td><td id="sixG">187.73</td></tr>
-         <tr onclick="getkInTable('sevenG')"><td>Медь</td><td id="sevenG">217.06</td></tr>
-         <tr onclick="getkInTable('eightG')"><td>Серебро</td><td id="eightG">155.73</td></tr>
-         <tr onclick="getkInTable('nineG')"><td>Серый чугун</td><td id="nineG">240.53</td></tr>
-         <tr onclick="getkInTable('tenG')"><td>Сталь</td><td id="tenG">437.3</td></tr>
-        </table>
-    </div>
-    <!-- <div class="table">
-        <table border="1" cellpadding="4" cellspacing="1">
-         <caption>Таблица плотности материалов</caption>
-         <tr>
-          <th>Твёрдое тело</th>
-          <th>$$ p {г \over cм^3}$$</th>
-         </tr>
-         <tr onclick="getMasInTable('oneG')"><td>Осмий</td><td id="oneG">22.6</td></tr>
-         <tr onclick="getMasInTable('twoG')"><td>Иридий</td><td id="twoG">22.4</td></tr>
-         <tr onclick="getMasInTable('threG')"><td>Платина</td><td id="threG">21.5</td></tr>
-         <tr onclick="getMasInTable('fourG')"><td>Золото</td><td id="fourG">19.3</td></tr>
-         <tr onclick="getMasInTable('fiveG')"><td>Чугун</td><td id="fiveG">7</td></tr>
-        </table>
-
-        <div class="formul">
-            <h2>$$ F_{упр.} = mg $$</h2>
-            <h2>$$ F_{упр.} = kx $$</h2>
-            <h2>$$ k = {F_{упр.} \over x} $$</h2>
-            
-            <h3>Данные для ручного ввода</h3>
-            <p id="statusX">x = 1 м</p>
-            <input id="X" type="range" onchange='eventX(this.value)' value="10" min="1" max="15"
-            disabled>
-           
-            <p id="statusV">V = 1 см.куб. </p>
-            <input id="V" type="range" onchange='eventV(this.value)' value="1" min="1" max="50" disabled>
-            
-
-
-            <p>m = <label id="m"></label> </p>
-            <p>F = <label id="F"></label></p>
-            
+        <div class="table">
+        <table class="value_table">
+            <caption>Таблица жесткости пружины</caption>
+            <tr>
+             <th>Твёрдое тело</th>
+             <th>$$ k, {Н \over м}$$</th>
+             <!-- k = G * (Dw)^4 / 8 * Na * (Dm)^3, -->
+            </tr>
+            <tr class="need_click" onclick="getkInTable('oneG')"><td class="choice">Алюминий</td><td class="choice" id="oneG">138.6</td></tr>
+            <tr class="need_click" onclick="getkInTable('twoG')"><td>Вольфрам</td><td id="twoG">720</td></tr>
+            <tr class="need_click" onclick="getkInTable('threeG')"><td>Германий</td><td id="threeG">165.3</td></tr>
+            <tr class="need_click" onclick="getkInTable('fourG')"><td>Дюралюминий</td><td id="fourG">147.2</td></tr>
+            <tr class="need_click" onclick="getkInTable('fiveG')"><td>Иридий</td><td id="fiveG">1098.6</td></tr>
+            <tr class="need_click" onclick="getkInTable('sixG')"><td>Латунь</td><td id="sixG">187.73</td></tr>
+            <tr class="need_click" onclick="getkInTable('sevenG')"><td>Медь</td><td id="sevenG">217.06</td></tr>
+            <tr class="need_click" onclick="getkInTable('eightG')"><td>Серебро</td><td id="eightG">155.73</td></tr>
+            <tr class="need_click" onclick="getkInTable('nineG')"><td>Серый чугун</td><td id="nineG">240.53</td></tr>
+            <tr class="need_click" onclick="getkInTable('tenG')"><td>Сталь</td><td id="tenG">437.3</td></tr>
+           </table>
         </div>
-
-    </div> -->
+    </div>
     <script src="js/script.js"></script>
     <SCRIPT SRC='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></SCRIPT>
 </body>
